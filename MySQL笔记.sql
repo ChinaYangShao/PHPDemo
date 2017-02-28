@@ -34,7 +34,6 @@
 	删除视图：
 		drop view [if exists] 视图名;
 
-		
 
 
 数据库操作
@@ -47,9 +46,37 @@
 			insert into 表名 set 字段名1=值1, 字段名2=值2, ...;
 
 
-	删： 
+	删： delete from 表名 where xx=xxx and xxx = xxx or xxx = xxx;
 
-	改： 
+	改： update 表名 set xx=xx,xxx=xx where xxx=xxx and xxx=xxx;
+
+	查：select [all | distinct] 字段或表达式列表 [from子句][where子句][group by子句][having子句][order by子句][limit子句];
+		[all | distinct]：用于设定所select出来的数据是否允许出现重复行(完全相同的数据行)
+			all : 允许出现 --- 默认是允许的。
+			distinct : 不允许出现 --- 就是所谓的“消除重复行”
+		[from子句]：就是指定数据的来源，其实就是‘表’，可以是一个表，也可以是多个表。
+		[where子句]： 也就是条件判断语句，类似if语句。
+			where 中可用的运算符：
+				算术运算符：+  - *  /  %
+				比较运算符：>  >= <  <=  =(等于，并不是赋值)  <>(不等于)  ==(等于，MySQL扩展)  !=(不等于，MySQL扩展)
+				逻辑运算符：and(与)  or（或）  not(非)
+			between 语法：XX between 值1 and 值2；
+				含义：字段XX的值在值1和值2之间(含)，XX>=值1 and XX<=值2;
+
+			in 语法：XX in(值1,值2,...);
+				含义：XX等于其中列出来的任何一个值都算成立，相当于：XX=值1 or XX=值2 or ...;
+
+			like 语法(模糊查找)： XX like '要查找的字符';
+				特殊字符：
+					%  :  任意个任意字符
+					_  :  一个任意字符
+
+
+
+
+
+
+
 
 
 
